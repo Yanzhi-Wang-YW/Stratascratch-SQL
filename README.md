@@ -1,1 +1,2 @@
-# Stratascratch-SQL
+# Stratascratch-SQL 
+  - Stratascratch-SQL
