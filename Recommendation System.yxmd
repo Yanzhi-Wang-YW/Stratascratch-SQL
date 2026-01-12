@@ -1,0 +1,329 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2024.1">
+  <Nodes>
+    <Node ToolID="1">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
+        <Position x="186" y="210" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <NumRows value="12" />
+          <Fields>
+            <Field name="user_id" />
+            <Field name="friend_id" />
+          </Fields>
+          <Data>
+            <r>
+              <c>1</c>
+              <c>2</c>
+            </r>
+            <r>
+              <c>1</c>
+              <c>4</c>
+            </r>
+            <r>
+              <c>1</c>
+              <c>5</c>
+            </r>
+            <r>
+              <c>2</c>
+              <c>1</c>
+            </r>
+            <r>
+              <c>2</c>
+              <c>3</c>
+            </r>
+            <r>
+              <c>2</c>
+              <c>4</c>
+            </r>
+            <r>
+              <c>2</c>
+              <c>5</c>
+            </r>
+            <r>
+              <c>3</c>
+              <c>2</c>
+            </r>
+            <r>
+              <c>4</c>
+              <c>1</c>
+            </r>
+            <r>
+              <c>4</c>
+              <c>2</c>
+            </r>
+            <r>
+              <c>5</c>
+              <c>1</c>
+            </r>
+            <r>
+              <c>5</c>
+              <c>2</c>
+            </r>
+          </Data>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>users_friends</AnnotationText>
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextInput" />
+    </Node>
+    <Node ToolID="2">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
+        <Position x="186" y="318" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <NumRows value="11" />
+          <Fields>
+            <Field name="user_id" />
+            <Field name="page_id" />
+          </Fields>
+          <Data>
+            <r>
+              <c>1</c>
+              <c>21</c>
+            </r>
+            <r>
+              <c>1</c>
+              <c>25</c>
+            </r>
+            <r>
+              <c>2</c>
+              <c>25</c>
+            </r>
+            <r>
+              <c>2</c>
+              <c>23</c>
+            </r>
+            <r>
+              <c>2</c>
+              <c>24</c>
+            </r>
+            <r>
+              <c>2</c>
+              <c>28</c>
+            </r>
+            <r>
+              <c>2</c>
+              <c>21</c>
+            </r>
+            <r>
+              <c>3</c>
+              <c>25</c>
+            </r>
+            <r>
+              <c>3</c>
+              <c>24</c>
+            </r>
+            <r>
+              <c>5</c>
+              <c>23</c>
+            </r>
+            <r>
+              <c>5</c>
+              <c>28</c>
+            </r>
+          </Data>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>users_pages</AnnotationText>
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextInput" />
+    </Node>
+    <Node ToolID="3">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="342" y="258" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="friend_id" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="user_id" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Left_user_id" selected="True" input="Left_" />
+                <SelectField field="Right_user_id" selected="False" rename="Right_user_id" input="Right_" />
+                <SelectField field="Right_page_id" selected="True" input="Right_" />
+                <SelectField field="*Unknown" selected="False" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>user's friend page</AnnotationText>
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="4">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="546" y="270" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="user_id" />
+            <Field field="page_id" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="user_id" />
+            <Field field="page_id" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Left_user_id" selected="True" input="Left_" />
+                <SelectField field="Left_page_id" selected="True" input="Left_" />
+                <SelectField field="Right_user_id" selected="False" rename="Right_user_id" input="Right_" />
+                <SelectField field="Right_page_id" selected="False" rename="Right_page_id" input="Right_" />
+                <SelectField field="*Unknown" selected="False" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText><![CDATA[Recommended page: 
+- Keep pages followed by user's friend 
+- Remove pages followed by this user itself  ]]></AnnotationText>
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="5">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Unique.Unique">
+        <Position x="678" y="258" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UniqueFields>
+            <Field field="user_id" />
+            <Field field="page_id" />
+          </UniqueFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Dedup</AnnotationText>
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnique" />
+    </Node>
+    <Node ToolID="6">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
+        <Position x="822" y="246" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SortInfo locale="1033">
+            <Field field="user_id" order="Ascending" />
+            <Field field="page_id" order="Ascending" />
+          </SortInfo>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText><![CDATA[Output in ascending order ]]></AnnotationText>
+          <DefaultAnnotationText>user_id - Ascending
+page_id - Ascending</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSort" />
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="3" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="3" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="4" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="3" Connection="Join" />
+      <Destination ToolID="4" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Left" />
+      <Destination ToolID="5" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="5" Connection="Unique" />
+      <Destination ToolID="6" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <IsTemplate value="False" />
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>Recommendation System</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="e81e8515-9fcd-479c-8c50-e161a0a77cd1" />
+      <Telemetry>
+        <PreviousWorkflowId value="1bb035f1-9c67-4daf-bff5-1acf2f5968ae" />
+        <OriginWorkflowId value="1bb035f1-9c67-4daf-bff5-1acf2f5968ae" />
+      </Telemetry>
+      <PlatformWorkflowId value="" />
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>
