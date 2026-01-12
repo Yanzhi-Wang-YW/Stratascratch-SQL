@@ -1,6 +1,6 @@
 # Recommendation System
 
-Medium 
+`Medium`
 
 You are given the list of Facebook friends and the list of Facebook pages that users follow.
 
