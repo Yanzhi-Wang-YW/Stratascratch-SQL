@@ -1,4 +1,4 @@
-```md
+```html
 <div class="QuestionDetails__container transition-opacity delay-150">
    <div class="QuestionDetails__contents flow">
       <div class="flex items-center gap-4">
