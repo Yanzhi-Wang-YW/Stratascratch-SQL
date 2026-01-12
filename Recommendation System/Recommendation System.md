@@ -1,4 +1,3 @@
-```md
 # Recommendation System
 
 Medium 
@@ -45,7 +44,6 @@ Output the user ID and the ID of the page that should be recommended to this use
 | 3        | 24       |
 | 5        | 23       |
 | 5        | 28       |
-```
 
 ```sql
 WITH users_friend_follow AS (
