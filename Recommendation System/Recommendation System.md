@@ -66,3 +66,5 @@ SELECT *
 FROM recommended_page 
 ORDER BY user_id ASC, page_id ASC
 ```  
+## Alteryx Workflow 
+![alt text](image.png)
