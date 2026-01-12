@@ -124,3 +124,23 @@ Preview
 | 5        | 23       |
 | 5        | 28       |
 ```
+
+```sql
+WITH users_friend_follow AS (
+    SELECT DISTINCT users_friends.user_id, users_pages.page_id 
+    FROM users_friends 
+    INNER JOIN users_pages 
+    ON users_friends.friend_id = users_pages.user_id  
+), 
+recommended_page AS (
+    SELECT DISTINCT users_friend_follow.*   
+    FROM users_friend_follow 
+    LEFT JOIN users_pages 
+    ON users_friend_follow.user_id = users_pages.user_id 
+    AND users_friend_follow.page_id = users_pages.page_id 
+    WHERE users_pages.page_id IS NULL 
+) 
+SELECT * 
+FROM recommended_page 
+ORDER BY user_id ASC, page_id ASC
+```
