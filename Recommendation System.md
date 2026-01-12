@@ -3,7 +3,7 @@
 
 Last Updated: January 2026
 
-Medium The difficulty is Medium, because the solution involves complex logic that requires joining multiple datasets and applying conditions to compare and filter results. This multi-step process entails identifying relationships between various entities and ensuring that users are recommended pages that none of their friends follow, adding layers of complexity to the task.
+Medium 
 
 ID 2081
 
