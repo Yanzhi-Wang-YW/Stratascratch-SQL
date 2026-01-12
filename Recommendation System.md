@@ -13,9 +13,9 @@ Output the user ID and the ID of the page that should be recommended to this use
 
 ### Tables
 
-### users\_friends
+### users_friends
 
-| user\_id | friend\_id |
+| user_id | friend_id |
 |----------|------------|
 | 1        | 2          |
 | 1        | 4          |
@@ -30,9 +30,9 @@ Output the user ID and the ID of the page that should be recommended to this use
 | 5        | 1          |
 | 5        | 2          |
 
-### users\_pages
+### users_pages
 
-| user\_id | page\_id |
+| user_id | page_id |
 |----------|----------|
 | 1        | 21       |
 | 1        | 25       |
@@ -65,4 +65,4 @@ recommended_page AS (
 SELECT * 
 FROM recommended_page 
 ORDER BY user_id ASC, page_id ASC
-``` 
+```  
